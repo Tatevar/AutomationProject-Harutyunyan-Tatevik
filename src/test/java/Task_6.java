@@ -34,19 +34,44 @@ public class Task_6 {
         actions.moveToElement(element).build().perform();
         driver.findElement(By.cssSelector("button[id*='-labs-onesie']")).click();
     }
+    public String getText(String element){
+        WebElement webElement = driver.findElement(By.xpath("//div[text() = '" + element + "']"));
+        webElement.getText();
 
+        return element;
+    }
 
     @Test
-    public void test() {
+    public void test() throws InterruptedException {
+
         driver.findElement(By.xpath("//input[@placeholder=\"Username\"]/ancestor::div[contains(@class,\"form_group\")]//input")).sendKeys("standard_user");
         driver.findElement(By.cssSelector("#password")).sendKeys("secret_sauce");
         driver.findElement(By.cssSelector(".submit-button.btn_action")).click();
         Assert.assertTrue(driver.findElement(By.xpath("//div[@class='header_secondary_container']//following::div")).isDisplayed());
         click();
         driver.findElement(By.cssSelector("a[class^=shopping_cart]")).click();
-        Assert.assertEquals(driver.findElement(By.xpath("//div[text()='Sauce Labs Backpack']")).getText(), "Sauce Labs Backpack");
+
+        Assert.assertEquals(getText("Sauce Labs Backpack"), "Sauce Labs Backpack");
         Assert.assertEquals(driver.findElement(By.xpath("//div[text()='29.99']")).getText(), "$29.99");
-        Assert.assertEquals(driver.findElement(By.xpath("//div[text()='Sauce Labs Backpack']")).getText(), "Sauce Labs Backpack");
+
+        Assert.assertEquals(getText("Sauce Labs Bike Light"), "Sauce Labs Bike Light");
+        Assert.assertEquals(driver.findElement(By.xpath("//div[text()='9.99']")).getText(), "$9.99");
+
+        Assert.assertEquals(getText("Sauce Labs Fleece Jacket"), "Sauce Labs Fleece Jacket");
+        Assert.assertEquals(driver.findElement(By.xpath("//div[text()='49.99']")).getText(), "$49.99");
+
+        WebElement element = driver.findElement(By.xpath("//button[@id='remove-sauce-labs-fleece-jacket']"));
+        Actions actions = new Actions(driver);
+        actions.moveToElement(element).build().perform();
+        Thread.sleep(5000);
+
+       Assert.assertEquals(driver.findElement(By.xpath("//div[contains(text(),' T-Shirt')]")).getText(), "Sauce Labs Bolt T-Shirt");
+        Assert.assertEquals(driver.findElement(By.xpath("//div[text()='15.99']")).getText(), "$15.99");
+
+
+        Assert.assertEquals(getText("Sauce Labs Onesie"), "Sauce Labs Onesie");
+        Assert.assertEquals(driver.findElement(By.xpath("//div[text()='7.99']")).getText(), "$7.99");
+
     }
 }
 
