@@ -27,7 +27,7 @@ public class Task_6 {
     public void click() {
         driver.findElement(By.xpath("//button[contains(@id,'add-to-cart-sauce-labs-bike-light')]")).click();
         driver.findElement(By.xpath("//button[@id='add-to-cart-sauce-labs-backpack' and @name='add-to-cart-sauce-labs-backpack']")).click();
-        driver.findElement(By.xpath("//button[@name='add-to-cart-sauce-labs-bolt-t-shirt']//parent::div")).click();
+        driver.findElement(By.id("add-to-cart-sauce-labs-bolt-t-shirt")).click();
         driver.findElement(By.cssSelector("button[id$='fleece-jacket']")).click();
         WebElement element = driver.findElement(By.xpath("(//div)[60]"));
         Actions actions = new Actions(driver);
@@ -44,7 +44,7 @@ public class Task_6 {
     @Test
     public void test() throws InterruptedException {
 
-        driver.findElement(By.xpath("//input[@placeholder=\"Username\"]/ancestor::div[contains(@class,\"form_group\")]//input")).sendKeys("standard_user");
+        driver.findElement(By.xpath("//input[@Placeholder='Username']/ancestor::div[contains(@Class,'form_group')]//input")).sendKeys("standard_user");
         driver.findElement(By.cssSelector("#password")).sendKeys("secret_sauce");
         driver.findElement(By.cssSelector(".submit-button.btn_action")).click();
         Assert.assertTrue(driver.findElement(By.xpath("//div[@class='header_secondary_container']//following::div")).isDisplayed());
@@ -65,12 +65,11 @@ public class Task_6 {
         actions.moveToElement(element).build().perform();
         Thread.sleep(5000);
 
-       Assert.assertEquals(driver.findElement(By.xpath("//div[contains(text(),' T-Shirt')]")).getText(), "Sauce Labs Bolt T-Shirt");
-        Assert.assertEquals(driver.findElement(By.xpath("//div[text()='15.99']")).getText(), "$15.99");
+        Assert.assertTrue(driver.findElement(By.xpath("//div[contains(text(),'Labs Bolt T-Shirt')]")).isDisplayed());
+        Assert.assertTrue(driver.findElement(By.xpath("//div[text()='15.99']")).isDisplayed());
 
-
-        Assert.assertEquals(getText("Sauce Labs Onesie"), "Sauce Labs Onesie");
-        Assert.assertEquals(driver.findElement(By.xpath("//div[text()='7.99']")).getText(), "$7.99");
+        Assert.assertTrue(driver.findElement(By.xpath("//div[contains(text(),'Sauce Labs Onesie')]")).isDisplayed());
+        Assert.assertTrue(driver.findElement(By.xpath("//div[text()='7.99']")).isDisplayed());
 
     }
 }
