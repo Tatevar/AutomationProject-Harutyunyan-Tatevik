@@ -59,9 +59,10 @@ public class Tests extends BaseTest {
                 .verifyBasketPage();
     }
     @Test(priority = 5 )
-    public void RemoveProductFromBasket_Test() {
+    public void RemoveProductFromBasket_Test() throws InterruptedException {
         loginPage
                 .loginToApplication("standard_user", "secret_sauce");
+        Thread.sleep(5000);
         productCataloguePage
                 .AddProductToBasket()
                 .OpenBasket();
@@ -70,9 +71,10 @@ public class Tests extends BaseTest {
                 .ClickRemoveButton();
     }
         @Test(priority = 6 )
-        public void PlaceAnOrder_Test() {
+        public void PlaceAnOrder_Test() throws InterruptedException {
             loginPage
                     .loginToApplication("standard_user", "secret_sauce");
+            Thread.sleep(5000);
             productCataloguePage
                     .AddProductToBasket()
                     .OpenBasket();
@@ -87,6 +89,5 @@ public class Tests extends BaseTest {
                 .ClickFinishBtn();
         orderCompletedPage
                 .VerifyOrderCompletedPage();
-
     }
 }
