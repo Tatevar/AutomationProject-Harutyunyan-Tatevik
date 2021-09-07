@@ -5,9 +5,10 @@ import org.openqa.selenium.WebDriver;
 
 public class BasketPage extends BasePage {
     private By header = By.xpath("//div[@class='header_secondary_container']//following::div");
-    private By button = By.id("checkout");
+    private By checkoutButton = By.id("checkout");
+    private By removeButton = By.id("remove-sauce-labs-backpack");
 
-    protected BasketPage(WebDriver driver) {
+    public BasketPage(WebDriver driver) {
         super(driver);
     }
 
@@ -17,7 +18,11 @@ public class BasketPage extends BasePage {
     }
 
     public BasketPage ClickCheckoutButton() {
-        click(header);
+        click(checkoutButton);
+        return this;
+    }
+    public BasketPage ClickRemoveButton() {
+        click(removeButton);
         return this;
     }
 }

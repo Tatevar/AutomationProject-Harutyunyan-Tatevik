@@ -7,7 +7,7 @@ public class OrderCheckingPage extends BasePage {
     private By summaryPage = By.id("checkout_summary_container");
     private By finishBtn = By.id("finish");
 
-    protected OrderCheckingPage(WebDriver driver) {
+    public OrderCheckingPage(WebDriver driver) {
         super(driver);
     }
 

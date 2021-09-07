@@ -12,7 +12,7 @@ public class CheckoutPage extends BasePage {
     private By checkoutInfo = By.id("checkout_info_container");
 
 
-    protected CheckoutPage(WebDriver driver) {
+    public CheckoutPage(WebDriver driver) {
         super(driver);
     }
     public CheckoutPage verifyCheckoutPage() {
