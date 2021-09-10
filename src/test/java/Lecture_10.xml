@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="Lecture_10">
+    <test name="DataProviderTests">
+        <classes>
+            <class name="Lecture_10.DataProvaiderTests"></class>
+        </classes>
+    </test>
+    <test name="InovTests">
+        <classes>
+            <class name="Lecture_10.InvocationCount"></class>
+        </classes>
+    </test>
+</suite>

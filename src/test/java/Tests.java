@@ -5,12 +5,12 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 public class Tests extends BaseTest {
-    LoginPage loginPage = new LoginPage(driver);
-    ProductCataloguePage productCataloguePage = new ProductCataloguePage(driver);
-    BasketPage basketPage = new BasketPage(driver);
-    CheckoutPage checkoutPage = new CheckoutPage(driver);
-    OrderCheckingPage orderCheckingPage = new OrderCheckingPage(driver);
-    OrderCompletedPage orderCompletedPage = new OrderCompletedPage(driver);
+    LoginPage loginPage ;
+    ProductCataloguePage productCataloguePage;
+    BasketPage basketPage;
+    CheckoutPage checkoutPage;
+    OrderCheckingPage orderCheckingPage;
+    OrderCompletedPage orderCompletedPage;
 
     @BeforeClass
     public void initialization() {
