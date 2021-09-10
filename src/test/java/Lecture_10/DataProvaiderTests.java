@@ -8,6 +8,8 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
+import static Driver.DriverCreation.quitDriver;
+
 public class DataProvaiderTests extends BaseTest {
     LoginPage loginPage;
     ProductCataloguePage productCataloguePage ;
@@ -48,5 +50,6 @@ public Object [][] signInInputData() {
         } else {
             loginPage.checkErrorText(errorText);
         }
+        quitDriver();
     }
 }

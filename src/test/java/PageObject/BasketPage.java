@@ -2,11 +2,14 @@ package PageObject;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.testng.Assert;
 
 public class BasketPage extends BasePage {
     private By header = By.xpath("//div[@class='header_secondary_container']//following::div");
     private By checkoutButton = By.id("checkout");
     private By removeButton = By.id("remove-sauce-labs-backpack");
+    private By removedCartItem =By.className("removed_cart_item");
 
     public BasketPage(WebDriver driver) {
         super(driver);
@@ -21,8 +24,14 @@ public class BasketPage extends BasePage {
         click(checkoutButton);
         return this;
     }
+
     public BasketPage ClickRemoveButton() {
         click(removeButton);
+        return this;
+    }
+
+    public BasketPage basketPageAfterProductRemoving() {
+        isDisplayed(removedCartItem);
         return this;
     }
 }

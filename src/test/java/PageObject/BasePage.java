@@ -6,6 +6,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
+import properties.PropertyReader;
 
 import java.util.Properties;
 
@@ -19,6 +20,7 @@ public class BasePage {
         this.driver = driver;
         wait = new WebDriverWait(DriverCreation.getDriver(), 5);
         actions = new Actions(DriverCreation.getDriver());
+        properties = PropertyReader.getProperties();
 
     }
 

@@ -14,7 +14,7 @@ public class LoginPage extends BasePage {
         super(driver);
     }
     public LoginPage openPage() {
-        open("https://www.saucedemo.com/");
+        open();
         return this;
     }
 
