@@ -1,0 +1,113 @@
+{
+  "uid" : "581c1a719351c7d",
+  "name" : "sortPriceLow_Test",
+  "fullName" : "Lecture_10.SortingTests.sortPriceLow_Test",
+  "historyId" : "d280087929da149c95687e626be404a5",
+  "time" : {
+    "start" : 1631475287073,
+    "stop" : 1631475287629,
+    "duration" : 556
+  },
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ {
+    "name" : "precondition",
+    "time" : {
+      "start" : 1631475286983,
+      "stop" : 1631475287048,
+      "duration" : 65
+    },
+    "description" : "",
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "setupDriver",
+    "time" : {
+      "start" : 1631475271319,
+      "stop" : 1631475277941,
+      "duration" : 6622
+    },
+    "description" : "",
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "initialization",
+    "time" : {
+      "start" : 1631475277994,
+      "stop" : 1631475278039,
+      "duration" : 45
+    },
+    "description" : "",
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  } ],
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "package",
+    "value" : "Lecture_10.SortingTests"
+  }, {
+    "name" : "testClass",
+    "value" : "Lecture_10.SortingTests"
+  }, {
+    "name" : "testMethod",
+    "value" : "sortPriceLow_Test"
+  }, {
+    "name" : "parentSuite",
+    "value" : "Lecture_10"
+  }, {
+    "name" : "suite",
+    "value" : "Sorting Tests"
+  }, {
+    "name" : "subSuite",
+    "value" : "Lecture_10.SortingTests"
+  }, {
+    "name" : "host",
+    "value" : "Tatas-MacBook-Air.local"
+  }, {
+    "name" : "thread",
+    "value" : "10429@Tatas-MacBook-Air.local.main(1)"
+  }, {
+    "name" : "framework",
+    "value" : "testng"
+  }, {
+    "name" : "language",
+    "value" : "java"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ {
+    "name" : "env",
+    "value" : "saucedemo"
+  } ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "581c1a719351c7d.json",
+  "parameterValues" : [ "saucedemo" ]
+}

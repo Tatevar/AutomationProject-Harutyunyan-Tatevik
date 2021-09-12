@@ -1,1 +1,80 @@
-{ }
+{
+  "9a61e97899b6d4d3d6163c0ee5228332" : {
+    "statistic" : {
+      "failed" : 1,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 0,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "688517fa7fb5de4b",
+      "status" : "failed",
+      "statusDetails" : "Lists differ at element [0]: Test.allTheThings() T-Shirt (Red) != Sauce Labs Backpack expected [Test.allTheThings() T-Shirt (Red)] but found [Sauce Labs Backpack]",
+      "time" : {
+        "start" : 1631475282256,
+        "stop" : 1631475285566,
+        "duration" : 3310
+      }
+    } ]
+  },
+  "e27469cc0940cc9e2fa488f048ec79ef" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 1,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "96c58ebe3b7be1e6",
+      "status" : "passed",
+      "time" : {
+        "start" : 1631475279966,
+        "stop" : 1631475282041,
+        "duration" : 2075
+      }
+    } ]
+  },
+  "6d18b1d8e19f1834898b31969edf82af" : {
+    "statistic" : {
+      "failed" : 1,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 0,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "60e03c893c848d17",
+      "status" : "failed",
+      "statusDetails" : "Lists differ at element [0]: 9.99 != 49.99 expected [9.99] but found [49.99]",
+      "time" : {
+        "start" : 1631475285835,
+        "stop" : 1631475286950,
+        "duration" : 1115
+      }
+    } ]
+  },
+  "d280087929da149c95687e626be404a5" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 1,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "581c1a719351c7d",
+      "status" : "passed",
+      "time" : {
+        "start" : 1631475287073,
+        "stop" : 1631475287629,
+        "duration" : 556
+      }
+    } ]
+  }
+}

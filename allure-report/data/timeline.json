@@ -1,5 +1,65 @@
 {
   "uid" : "ab17fc5a4eb3bca4b216b548c7f9fcbc",
-  "children" : [ ],
+  "children" : [ {
+    "name" : "Tatas-MacBook-Air.local",
+    "children" : [ {
+      "name" : "10429@Tatas-MacBook-Air.local.main(1)",
+      "children" : [ {
+        "name" : "sortPriceLow_Test",
+        "uid" : "581c1a719351c7d",
+        "parentUid" : "bb31e3d991212b914f7b33cc866e344f",
+        "status" : "passed",
+        "time" : {
+          "start" : 1631475287073,
+          "stop" : 1631475287629,
+          "duration" : 556
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ "saucedemo" ]
+      }, {
+        "name" : "sortFromZToA_Test",
+        "uid" : "688517fa7fb5de4b",
+        "parentUid" : "bb31e3d991212b914f7b33cc866e344f",
+        "status" : "failed",
+        "time" : {
+          "start" : 1631475282256,
+          "stop" : 1631475285566,
+          "duration" : 3310
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ "saucedemo" ]
+      }, {
+        "name" : "sortPriceHigh_Test",
+        "uid" : "60e03c893c848d17",
+        "parentUid" : "bb31e3d991212b914f7b33cc866e344f",
+        "status" : "failed",
+        "time" : {
+          "start" : 1631475285835,
+          "stop" : 1631475286950,
+          "duration" : 1115
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ "saucedemo" ]
+      }, {
+        "name" : "sortFromAToZ_Test",
+        "uid" : "96c58ebe3b7be1e6",
+        "parentUid" : "bb31e3d991212b914f7b33cc866e344f",
+        "status" : "passed",
+        "time" : {
+          "start" : 1631475279966,
+          "stop" : 1631475282041,
+          "duration" : 2075
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ "saucedemo" ]
+      } ],
+      "uid" : "bb31e3d991212b914f7b33cc866e344f"
+    } ],
+    "uid" : "db63f9432043fa1ba1aea2b699185484"
+  } ],
   "name" : "timeline"
 }
