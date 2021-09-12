@@ -1,9 +1,11 @@
 import Driver.BaseTest;
 import PageObject.Saucedemo.*;
+import TestNg.Listener;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
-
+@Listeners({Listener.class})
 public class Tests extends BaseTest {
     LoginPage loginPage ;
     ProductCataloguePage productCataloguePage;

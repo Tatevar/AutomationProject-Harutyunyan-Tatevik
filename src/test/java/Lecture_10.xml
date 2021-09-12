@@ -2,19 +2,24 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 <suite name="Lecture_10">
     <parameter name="env" value="saucedemo"></parameter>
-    <test name="DataProviderTests">
+    <test name="DataProviderTests" enabled="false">
         <classes>
             <class name="Lecture_10.DataProvaiderTests"></class>
         </classes>
     </test>
-    <test name="InovactionAdd" >
+    <test name="InovactionAdd" enabled="false" >
         <classes>
             <class name="Lecture_10.InvocationCountAdd" ></class>
         </classes>
     </test>
-    <test name="InovactionRemove">
+    <test name="InovactionRemove" enabled="false">
         <classes>
             <class name="Lecture_10.InvocationCountRemove"></class>
+        </classes>
+    </test>
+    <test name="Sorting Tests">
+        <classes>
+            <class name="Lecture_10.SortingTests"></class>
         </classes>
     </test>
 </suite>
