@@ -1,4 +1,4 @@
-package OldTasks;
+package Lecture_6;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;

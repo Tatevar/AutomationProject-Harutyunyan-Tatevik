@@ -1,15 +1,15 @@
 package Lecture_10;
 
 import Driver.BaseTest;
-import PageObject.BasketPage;
-import PageObject.LoginPage;
-import PageObject.ProductCataloguePage;
+import PageObject.Saucedemo.BasketPage;
+import PageObject.Saucedemo.LoginPage;
+import PageObject.Saucedemo.ProductCataloguePage;
 import TestNg.Listener;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
-import properties.PropertyReader;
+
 @Listeners({Listener.class})
 public class InvocationCountAdd extends BaseTest {
     LoginPage loginPage;

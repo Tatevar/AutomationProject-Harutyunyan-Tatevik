@@ -1,18 +1,14 @@
 package Lecture_10;
-
 import Driver.BaseTest;
-import PageObject.LoginPage;
-import PageObject.ProductCataloguePage;
-import org.testng.annotations.BeforeClass;
-import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.DataProvider;
-import org.testng.annotations.Test;
+import Driver.DriverCreation;
+import PageObject.Saucedemo.LoginPage;
+import PageObject.Saucedemo.ProductCataloguePage;
+import TestNg.Listener;
+import org.openqa.selenium.WebDriver;
+import org.testng.annotations.*;
 
-import static Driver.DriverCreation.quitDriver;
-
+@Listeners(Listener.class)
 public class DataProvaiderTests extends BaseTest {
-    LoginPage loginPage;
-    ProductCataloguePage productCataloguePage ;
     String emptyField = "";
     String username = "standard_user";
     String password = "secret_sauce";
@@ -21,26 +17,24 @@ public class DataProvaiderTests extends BaseTest {
     String emptyPasswordError = "Epic sadface: Password is required";
     String incorrectDataError = "Epic sadface: Username and password do not match any user in this service";
 
-    @BeforeClass
-    public void pre() {
-        loginPage = new LoginPage(driver);
-        productCataloguePage = new ProductCataloguePage(driver);
+    @DataProvider(name = "Authorization", parallel = true)
+    public Object[][] signInInputData() {
+
+        return new Object[][]{
+                {username, password, ""}, //positive sign-in
+                {username, incorrectData, incorrectDataError},
+                {emptyField, password, emptyUsernameError},
+                {username, emptyField, emptyPasswordError},
+                {emptyField, emptyField, emptyUsernameError},
+                {incorrectData, incorrectData, incorrectDataError},
+        };
     }
 
-@DataProvider(name = "Authorization",parallel = true)
-public Object [][] signInInputData() {
-
-    return new Object[][]{
-            {username,password}, //positive sign-in
-            {username,incorrectData,incorrectDataError},
-            {emptyField,password,emptyUsernameError},
-            {username,emptyField,emptyPasswordError},
-            {emptyField,emptyField,emptyUsernameError},
-            {incorrectData,incorrectData,incorrectDataError},
-    };
-    }
     @Test(dataProvider = "Authorization")
-    public void SignIn_Tests(String username, String password,String errorText) {
+    public void SignIn_Tests(String username, String password, String errorText) {
+        WebDriver driver = DriverCreation.getDriver();
+        LoginPage loginPage = new LoginPage(driver);
+        ProductCataloguePage productCataloguePage = new ProductCataloguePage(driver);
         loginPage
                 .openPage()
                 .verifyLoginPage()
@@ -50,6 +44,10 @@ public Object [][] signInInputData() {
         } else {
             loginPage.checkErrorText(errorText);
         }
-        quitDriver();
+    }
+
+    @AfterMethod
+    public void post(){
+        DriverCreation.quitDriver();
     }
 }

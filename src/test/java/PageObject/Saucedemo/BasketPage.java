@@ -1,9 +1,8 @@
-package PageObject;
+package PageObject.Saucedemo;
 
+import PageObject.BasePage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.testng.Assert;
 
 public class BasketPage extends BasePage {
     private By header = By.xpath("//div[@class='header_secondary_container']//following::div");

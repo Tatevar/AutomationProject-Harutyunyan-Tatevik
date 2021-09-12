@@ -1,5 +1,5 @@
 import Driver.BaseTest;
-import PageObject.*;
+import PageObject.Saucedemo.*;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;

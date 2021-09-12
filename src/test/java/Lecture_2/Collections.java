@@ -1,4 +1,4 @@
-package OldTasks;
+package Lecture_2;
 
 import org.testng.annotations.Test;
 
