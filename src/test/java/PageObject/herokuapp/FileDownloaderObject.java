@@ -1,42 +1,31 @@
 package PageObject.herokuapp;
-
-import Driver.BaseTest;
-import PageObject.BasePage;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import java.io.File;
 import java.util.HashMap;
-import java.util.Map;
 import org.openqa.selenium.By;
 import org.testng.Assert;
-
-public class FileDownloader extends BasePage {
+public class FileDownloaderObject {
 
     private By downloadFile = By.xpath("//*[@id='content']/div/a[1]");
+    static WebDriver driver;
+    String downloadPath ="/Users/tatevar/Documents/NewProject/AutomationProject-Harutyunyan-Tatevik/DownloadFile";
 
-    public FileDownloader(WebDriver driver) {
-        super(driver);
-    }
+    public void setUpAndclick() throws InterruptedException {
 
-    public FileDownloader fileClick() {
-        click(downloadFile);
-        return this;
-    }
-
-    public void setUp() {
-        Map<String, Object> prefs = new HashMap<String, Object>();
-        prefs.put("profile.default_content_settings.popups", 0);
-        prefs.put("download.default_directory", System.getProperty("user.dir"));
+        HashMap<String, Object> chromePrefs = new HashMap<String, Object>();
+        chromePrefs.put("profile.default_content_settings.popups", 0);
+        chromePrefs.put("download.default_directory",downloadPath);
         ChromeOptions options = new ChromeOptions();
-        options.setExperimentalOption("prefs", prefs);
-        WebDriver driver = new ChromeDriver(options);
-        pause(3);
-
+        options.setExperimentalOption("prefs", chromePrefs);
+        driver = new ChromeDriver(options);
+        driver.get("http://the-internet.herokuapp.com/download");
+        driver.findElement(downloadFile).click();
+        Thread.sleep(2000);
     }
-
     public void checkFile() {
-        File folder = new File(System.getProperty("user.dir"));
+        File folder = new File(downloadPath);
         File[] listOfFiles = folder.listFiles();
         boolean found = false;
         File f = null;
@@ -44,15 +33,15 @@ public class FileDownloader extends BasePage {
             if (listOfFile.isFile()) {
                 String fileName = listOfFile.getName();
                 System.out.println("File " + listOfFile.getName());
-                if (fileName.matches("testUpload.json")) {
+                if (fileName.matches("ex03.png")) {
                     f = new File(fileName);
                     found = true;
                 }
-                pause(3);
             }
         }
         Assert.assertTrue(found, "Downloaded document is not found");
         f.deleteOnExit();
+        driver.quit();
     }
 }
 
