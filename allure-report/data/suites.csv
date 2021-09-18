@@ -1,5 +1,0 @@
-"Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
-"failed","Sun Sep 12 23:34:45 AMT 2021","Sun Sep 12 23:34:46 AMT 2021","1115","Lecture_10","Sorting Tests","Lecture_10.SortingTests","Lecture_10.SortingTests","sortPriceHigh_Test","sortPriceHigh_Test","Sort the products from high to low"
-"passed","Sun Sep 12 23:34:39 AMT 2021","Sun Sep 12 23:34:42 AMT 2021","2075","Lecture_10","Sorting Tests","Lecture_10.SortingTests","Lecture_10.SortingTests","sortFromAToZ_Test","sortFromAToZ_Test",""
-"failed","Sun Sep 12 23:34:42 AMT 2021","Sun Sep 12 23:34:45 AMT 2021","3310","Lecture_10","Sorting Tests","Lecture_10.SortingTests","Lecture_10.SortingTests","sortFromZToA_Test","sortFromZToA_Test",""
-"passed","Sun Sep 12 23:34:47 AMT 2021","Sun Sep 12 23:34:47 AMT 2021","556","Lecture_10","Sorting Tests","Lecture_10.SortingTests","Lecture_10.SortingTests","sortPriceLow_Test","sortPriceLow_Test",""
