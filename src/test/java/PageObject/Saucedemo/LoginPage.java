@@ -1,5 +1,6 @@
-package PageObject;
+package PageObject.Saucedemo;
 
+import PageObject.BasePage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
@@ -14,7 +15,7 @@ public class LoginPage extends BasePage {
         super(driver);
     }
     public LoginPage openPage() {
-        open("https://www.saucedemo.com/");
+        open();
         return this;
     }
 

@@ -1,4 +1,4 @@
-package OldTasks;
+package Lecture_1;
 
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;

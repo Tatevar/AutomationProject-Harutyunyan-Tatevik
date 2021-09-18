@@ -1,16 +1,20 @@
+package Lecture_9;
+
 import Driver.BaseTest;
-import PageObject.*;
+import PageObject.Saucedemo.*;
+import TestNg.Listener;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
-
+@Listeners({Listener.class})
 public class Tests extends BaseTest {
-    LoginPage loginPage = new LoginPage(driver);
-    ProductCataloguePage productCataloguePage = new ProductCataloguePage(driver);
-    BasketPage basketPage = new BasketPage(driver);
-    CheckoutPage checkoutPage = new CheckoutPage(driver);
-    OrderCheckingPage orderCheckingPage = new OrderCheckingPage(driver);
-    OrderCompletedPage orderCompletedPage = new OrderCompletedPage(driver);
+    LoginPage loginPage ;
+    ProductCataloguePage productCataloguePage;
+    BasketPage basketPage;
+    CheckoutPage checkoutPage;
+    OrderCheckingPage orderCheckingPage;
+    OrderCompletedPage orderCompletedPage;
 
     @BeforeClass
     public void initialization() {
@@ -29,7 +33,7 @@ public class Tests extends BaseTest {
     }
 
     @Test(priority = 1)
-    public void loginToAppWithStandard_Test() throws InterruptedException {
+    public void loginToAppWithStandard_Test() {
         loginPage
                 .verifyLoginPage()
                 .loginToApplication("standard_user", "secret_sauce");
