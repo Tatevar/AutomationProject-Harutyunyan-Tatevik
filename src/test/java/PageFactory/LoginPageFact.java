@@ -24,6 +24,7 @@ public class LoginPageFact extends BasePage {
 
     public LoginPageFact(WebDriver driver) {
         super(driver);
+        PageFactory.initElements(driver, this);
     }
 
     public LoginPageFact openPage() {
@@ -44,6 +45,7 @@ public class LoginPageFact extends BasePage {
     public LoginPageFact checkErrorText(String expectedText) {
         Assert.assertEquals(this.errorTxt.getText(), expectedText);
         return this;
+
     }
 }
 

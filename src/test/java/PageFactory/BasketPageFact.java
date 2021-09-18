@@ -21,9 +21,9 @@ public class BasketPageFact extends BasePage {
     @FindBy(id="removed_cart_item")
     WebElement removedCartItem;
 
-    protected BasketPageFact(WebDriver driver) {
+    public BasketPageFact(WebDriver driver) {
         super(driver);
-        PageFactory.initElements(driver, BasketPageFact.class);
+        PageFactory.initElements(driver, this);
     }
     public BasketPageFact verifyBasketPage() {
         this.header.isDisplayed();
