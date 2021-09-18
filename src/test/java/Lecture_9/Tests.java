@@ -1,6 +1,7 @@
 package Lecture_9;
 
 import Driver.BaseTest;
+import PageFactory.LoginPageFact;
 import PageObject.Saucedemo.*;
 import TestNg.Listener;
 import org.testng.annotations.BeforeClass;
@@ -9,38 +10,35 @@ import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 @Listeners({Listener.class})
 public class Tests extends BaseTest {
-    LoginPage loginPage ;
     ProductCataloguePage productCataloguePage;
     BasketPage basketPage;
     CheckoutPage checkoutPage;
     OrderCheckingPage orderCheckingPage;
     OrderCompletedPage orderCompletedPage;
+    LoginPageFact loginPageFact = new LoginPageFact(driver);
+    LoginPage loginPage = new LoginPage(driver);
 
     @BeforeClass
     public void initialization() {
-        loginPage = new LoginPage(driver);
         productCataloguePage = new ProductCataloguePage(driver);
         basketPage = new BasketPage(driver);
         checkoutPage = new CheckoutPage(driver);
         orderCheckingPage = new OrderCheckingPage(driver);
         orderCompletedPage = new OrderCompletedPage(driver);
-    }
-
-    @BeforeMethod
-    public void precondition() {
-        loginPage.openPage();
 
     }
 
     @Test(priority = 1)
     public void loginToAppWithStandard_Test() {
-        loginPage
+        loginPageFact
+                .openPage()
                 .verifyLoginPage()
-                .loginToApplication("standard_user", "secret_sauce");
+                .fillLoginFields("standard_user","secret_sauce");
     }
     @Test(priority = 2)
     public void loginToAppWithProblemUser_Test() {
         loginPage
+                .openPage()
                 .loginToApplication("problem_user", "secret_sauce");
         productCataloguePage
                 .verifyPageAfterProblemUser();
@@ -49,12 +47,14 @@ public class Tests extends BaseTest {
         @Test(priority = 3)
         public void loginToAppWithLockedUser_Test() {
             loginPage
+                    .openPage()
                     .loginToApplication("locked_out_user", "secret_sauce")
                     .checkErrorText("Epic sadface: Sorry, this user has been locked out.");
         }
     @Test(priority = 4 )
     public void AddProductToBasket_Test() {
         loginPage
+                .openPage()
                 .loginToApplication("standard_user", "secret_sauce");
         productCataloguePage
                 .AddProductToBasket()
@@ -65,6 +65,7 @@ public class Tests extends BaseTest {
     @Test(priority = 5 )
     public void RemoveProductFromBasket_Test() throws InterruptedException {
         loginPage
+                .openPage()
                 .loginToApplication("standard_user", "secret_sauce");
         Thread.sleep(5000);
         productCataloguePage
@@ -77,6 +78,7 @@ public class Tests extends BaseTest {
         @Test(priority = 6 )
         public void PlaceAnOrder_Test() throws InterruptedException {
             loginPage
+                    .openPage()
                     .loginToApplication("standard_user", "secret_sauce");
             Thread.sleep(5000);
             productCataloguePage

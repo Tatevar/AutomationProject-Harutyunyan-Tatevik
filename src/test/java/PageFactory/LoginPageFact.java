@@ -1,17 +1,20 @@
 package PageFactory;
 
 import PageObject.BasePage;
+import PageObject.Saucedemo.LoginPage;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.PageFactory;
+import org.testng.Assert;
 
-public class LoginPage extends BasePage {
-
+public class LoginPageFact extends BasePage {
 
     @FindBy(css = "[data-test=username]")
     WebElement userName;
+
+    @FindBy(css="[data-test=error]")
+    WebElement errorTxt;
 
     @FindBy(css = "[data-test=password]")
     WebElement password;
@@ -19,25 +22,27 @@ public class LoginPage extends BasePage {
     @FindBy(css = "[data-test=login-button]")
     WebElement loginBtn;
 
-    @FindBy(how = How.ID, using = "test")
-    WebElement webElement;
-
-
-    public LoginPage(WebDriver driver) {
+    public LoginPageFact(WebDriver driver) {
         super(driver);
-        PageFactory.initElements(driver, LoginPage.class);
     }
 
-    public LoginPage openPage() {
-        loginBtn.click();
+    public LoginPageFact openPage() {
         open("https://www.saucedemo.com/");
         return this;
     }
 
-    public LoginPage fillAuthFields(String userName, String password) {
+    public LoginPageFact fillLoginFields(String userName, String password) {
         this.userName.sendKeys(userName);
         this.password.sendKeys(password);
         this.loginBtn.click();
+        return this;
+    }
+    public LoginPageFact verifyLoginPage() {
+        this.userName.isDisplayed();
+        return this;
+    }
+    public LoginPageFact checkErrorText(String expectedText) {
+        Assert.assertEquals(this.errorTxt.getText(), expectedText);
         return this;
     }
 }
