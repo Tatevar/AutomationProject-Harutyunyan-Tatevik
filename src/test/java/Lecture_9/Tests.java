@@ -1,3 +1,5 @@
+package Lecture_9;
+
 import Driver.BaseTest;
 import PageObject.Saucedemo.*;
 import TestNg.Listener;
@@ -31,7 +33,7 @@ public class Tests extends BaseTest {
     }
 
     @Test(priority = 1)
-    public void loginToAppWithStandard_Test() throws InterruptedException {
+    public void loginToAppWithStandard_Test() {
         loginPage
                 .verifyLoginPage()
                 .loginToApplication("standard_user", "secret_sauce");

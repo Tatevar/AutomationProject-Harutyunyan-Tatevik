@@ -7,19 +7,14 @@
             <class name="Lecture_10.DataProvaiderTests"></class>
         </classes>
     </test>
-    <test name="InovactionAdd" enabled="false" >
+    <test name="InovactionAdd"  >
         <classes>
             <class name="Lecture_10.InvocationCountAdd" ></class>
         </classes>
     </test>
-    <test name="InovactionRemove" enabled="false">
+    <test name="InovactionRemove">
         <classes>
             <class name="Lecture_10.InvocationCountRemove"></class>
-        </classes>
-    </test>
-    <test name="Sorting Tests">
-        <classes>
-            <class name="Lecture_10.SortingTests"></class>
         </classes>
     </test>
 </suite>
