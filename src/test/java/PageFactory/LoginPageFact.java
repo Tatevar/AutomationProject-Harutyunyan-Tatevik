@@ -2,6 +2,7 @@ package PageFactory;
 
 import PageObject.BasePage;
 import PageObject.Saucedemo.LoginPage;
+import UserLoginData.UserLogin;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -13,7 +14,7 @@ public class LoginPageFact extends BasePage {
     @FindBy(css = "[data-test=username]")
     WebElement userName;
 
-    @FindBy(css="[data-test=error]")
+    @FindBy(css = "[data-test=error]")
     WebElement errorTxt;
 
     @FindBy(css = "[data-test=password]")
@@ -38,14 +39,25 @@ public class LoginPageFact extends BasePage {
         this.loginBtn.click();
         return this;
     }
+
     public LoginPageFact verifyLoginPage() {
         this.userName.isDisplayed();
         return this;
     }
+
     public LoginPageFact checkErrorText(String expectedText) {
         Assert.assertEquals(this.errorTxt.getText(), expectedText);
         return this;
 
+    }
+// value object pattern
+    public LoginPageFact loginToApp(UserLogin userLogin) {
+        userLogin.setLogin("standard_user");
+        userLogin.setPassword("secret_sauce");
+        this.userName.sendKeys(userLogin.getLogin());
+        this.password.sendKeys(userLogin.getPassword());
+        this.loginBtn.click();
+        return this;
     }
 }
 

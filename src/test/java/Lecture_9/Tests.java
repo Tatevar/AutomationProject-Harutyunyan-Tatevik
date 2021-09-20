@@ -17,7 +17,7 @@ public class Tests extends BaseTest {
     CheckoutPage checkoutPage;
     OrderCheckingPage orderCheckingPage;
     OrderCompletedPage orderCompletedPage;
-    LoginPageFact loginPageFact = new LoginPageFact(driver);
+    LoginPageFact loginPageFact;
 
     @BeforeClass
     public void initialization() {
