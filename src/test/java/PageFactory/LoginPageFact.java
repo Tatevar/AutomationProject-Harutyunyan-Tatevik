@@ -1,8 +1,7 @@
 package PageFactory;
 
 import PageObject.BasePage;
-import PageObject.Saucedemo.LoginPage;
-import UserLoginData.UserLogin;
+import saucedemoPatterns.UserLogin;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -51,6 +50,7 @@ public class LoginPageFact extends BasePage {
 
     }
 // value object pattern
+//Chain Of Invocations
     public LoginPageFact loginToApp(UserLogin userLogin) {
         userLogin.setLogin("standard_user");
         userLogin.setPassword("secret_sauce");
@@ -58,6 +58,7 @@ public class LoginPageFact extends BasePage {
         this.password.sendKeys(userLogin.getPassword());
         this.loginBtn.click();
         return this;
+
     }
 }
 

@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
-<suite name="Lecture_14">
+<suite name="Lecture_9">
     <parameter name="env" value="saucedemo"></parameter>
-    <test name="New Pattern Tests">
+    <test name="Page object tests">
         <classes>
-            <class name="Lecture_14.Lecture_14"></class>
+            <class name="Lecture_9.Tests"></class>
         </classes>
     </test>
 </suite>

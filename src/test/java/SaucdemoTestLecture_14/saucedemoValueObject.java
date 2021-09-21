@@ -1,17 +1,16 @@
-package Lecture_14;
+package SaucdemoTestLecture_14;
 
 import Driver.BaseTest;
-import PageFactory.BasketPageFact;
 import PageFactory.LoginPageFact;
 import PageObject.Saucedemo.*;
 import TestNg.Listener;
-import UserLoginData.UserLogin;
+import saucedemoPatterns.UserLogin;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
 @Listeners({Listener.class})
-public class Lecture_14 extends BaseTest {
+public class saucedemoValueObject extends BaseTest {
         ProductCataloguePage productCataloguePage;
         LoginPageFact loginPageFact;
         UserLogin userLogin = new UserLogin();
@@ -22,11 +21,14 @@ public class Lecture_14 extends BaseTest {
             loginPageFact = new LoginPageFact(driver);
             loginPageFact.openPage();
         }
-    // value object pattern
+   // Chain Of Invocations
         @Test
         public void loginToAppWithStandard_Test() {
-            loginPageFact.loginToApp(userLogin);
-            productCataloguePage.verifyProductPage();
+            loginPageFact
+                    .verifyLoginPage()
+                    .loginToApp(userLogin);
+            productCataloguePage
+                    .verifyProductPage();
 
         }
     }

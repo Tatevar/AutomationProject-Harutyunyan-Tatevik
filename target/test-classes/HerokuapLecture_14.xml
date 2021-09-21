@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="Herokuapp Pattern">
+    <parameter name="env" value="herokuapp"></parameter>
+    <test name="Herokuapp Builder test" enabled="false">
+        <classes>
+            <class name="HerokuappTestLecture_14.herokuappBuilder"></class>
+        </classes>
+    </test>
+    <test name="Herokuapp Value Object test">
+    <classes>
+        <class name="HerokuappTestLecture_14.herokuappValueObject"></class>
+    </classes>
+    </test>
+</suite>

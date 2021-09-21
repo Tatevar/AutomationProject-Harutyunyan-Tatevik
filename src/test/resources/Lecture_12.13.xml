@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="the-internet welcomes you">
+    <parameter name="env" value="herokuapp"></parameter>
+    <test name="Context Menu" enabled="false">
+        <classes>
+            <class name="Lecture_12_13.ContextMenu_Test"/>
+        </classes>
+    </test>
+    <test name="Dynamic Controls" enabled="false">
+        <classes>
+            <class name="Lecture_12_13.DynamicControls_Test"/>
+        </classes>
+    </test>
+    <test name="File Uploader" enabled="false">
+        <classes>
+            <class name="Lecture_12_13.FileUploader_Test"/>
+        </classes>
+    </test>
+    <test name="Downloader test">
+        <classes>
+            <class name="Lecture_12_13.Downloader_Test"/>
+        </classes>
+    </test>
+</suite>
