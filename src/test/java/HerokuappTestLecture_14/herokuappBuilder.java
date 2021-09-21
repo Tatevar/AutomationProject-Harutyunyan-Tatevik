@@ -3,11 +3,11 @@ import Driver.BaseTest;
 import PageObject.herokuapp.FormAuthenticationObject;
 import PageObject.herokuapp.HomePageObject;
 import TestNg.Listener;
-import herokuappPatterns.LoginBuilder;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
-import static Driver.BaseTest.driver;
+import Patterns.UserBuilder;
+
 import static PageObject.herokuapp.HomePageLinksEnum.FORMAUTHENTICATION;
 
 @Listeners({Listener.class})
@@ -25,20 +25,16 @@ public class herokuappBuilder extends BaseTest {
 
     @Test
     public void formAuthenticationObject_Test() {
-        LoginBuilder loginBuilder = new LoginBuilder
+        UserBuilder userBuilder = new UserBuilder
                 .Builder()
-                .withUsername("")
-                .withPassword("")
+                .withUsername("hgjh")
+                .withPassword("   ")
                 .build();
         formAuthenticationObject
                 .verifyPageTitle("Login Page")
-                .loginToApplication(loginBuilder)
+                .loginToApplication(userBuilder)
                 .checkErrorText("Your username is invalid!\n" +
                         "×");
-
-
-
-
         }
     }
 

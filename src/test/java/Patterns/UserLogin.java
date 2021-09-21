@@ -1,4 +1,4 @@
-package saucedemoPatterns;
+package Patterns;
 // value object pattern
 public class UserLogin {
     String login, password;

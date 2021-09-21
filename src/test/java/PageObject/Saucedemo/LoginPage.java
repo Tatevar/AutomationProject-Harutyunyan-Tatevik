@@ -1,6 +1,6 @@
 package PageObject.Saucedemo;
 
-import saucedemoPatterns.UserBuilder;
+import Patterns.UserBuilder;
 import PageObject.BasePage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;

@@ -7,7 +7,7 @@ import TestNg.Listener;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
-import saucedemoPatterns.UserBuilder;
+import Patterns.UserBuilder;
 
 @Listeners({Listener.class})
 public class saucedemoBuilder extends BaseTest {

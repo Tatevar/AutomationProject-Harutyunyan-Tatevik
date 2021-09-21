@@ -4,7 +4,7 @@ import Driver.BaseTest;
 import PageFactory.LoginPageFact;
 import PageObject.Saucedemo.*;
 import TestNg.Listener;
-import saucedemoPatterns.UserLogin;
+import Patterns.UserLogin;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;

@@ -2,7 +2,7 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 <suite name="Herokuapp Pattern">
     <parameter name="env" value="herokuapp"></parameter>
-    <test name="Herokuapp Builder test" enabled="false">
+    <test name="Herokuapp Builder test" >
         <classes>
             <class name="HerokuappTestLecture_14.herokuappBuilder"></class>
         </classes>

@@ -1,4 +1,4 @@
-package saucedemoPatterns;
+package Patterns;
 
 public class UserBuilder {
 
