@@ -17,11 +17,10 @@ public class BasePage {
     protected Properties properties;
 
     protected BasePage(WebDriver driver) {
-        this.driver = driver;
+        this.driver = DriverCreation.getDriver();
         wait = new WebDriverWait(DriverCreation.getDriver(), 5);
         actions = new Actions(DriverCreation.getDriver());
         properties = PropertyReader.getProperties();
-
     }
 
         protected void enter(By element, CharSequence... charSequences) {
