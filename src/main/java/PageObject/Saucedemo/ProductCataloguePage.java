@@ -6,7 +6,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 
-import java.nio.channels.Selector;
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
