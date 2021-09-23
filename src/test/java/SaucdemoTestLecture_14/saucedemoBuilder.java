@@ -3,13 +3,11 @@ package SaucdemoTestLecture_14;
 import Driver.BaseTest;
 import PageObject.Saucedemo.LoginPage;
 import PageObject.Saucedemo.ProductCataloguePage;
-import TestNg.Listener;
+import Patterns.User;
+import Patterns.User.UserBuilder;
 import org.testng.annotations.BeforeClass;
-import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
-import Patterns.UserBuilder;
 
-@Listeners({Listener.class})
 public class saucedemoBuilder extends BaseTest {
     ProductCataloguePage productCataloguePage;
     LoginPage loginPage;
@@ -17,19 +15,15 @@ public class saucedemoBuilder extends BaseTest {
 
     @BeforeClass
     public void preCondition() {
-        productCataloguePage = new ProductCataloguePage(driver);
-        loginPage = new LoginPage(driver);
+        productCataloguePage = new ProductCataloguePage();
+        loginPage = new LoginPage();
         loginPage.openPage();
     }
 
     @Test
     public void loginToAppWithStandard_Test() {
-        UserBuilder userBuilder = new UserBuilder
-                .Builder()
-                .withUsername("problem_user")
-                .withPassword("secret_sauce")
-                .build();
-        loginPage.loginToAppWithBuilder(userBuilder);
+        User user = new User.UserBuilder().username("problem_user").password("secret_sauce").build();
+        loginPage.loginToAppWithBuilder(user);
         productCataloguePage.verifyProductPage();
 
     }

@@ -10,9 +10,6 @@ public class BasketPage extends BasePage {
     private By removeButton = By.id("remove-sauce-labs-backpack");
     private By removedCartItem =By.className("removed_cart_item");
 
-    public BasketPage(WebDriver driver) {
-        super(driver);
-    }
 
     public BasketPage verifyBasketPage() {
         isDisplayed(header);

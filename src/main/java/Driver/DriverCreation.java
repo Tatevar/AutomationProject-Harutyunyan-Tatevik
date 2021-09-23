@@ -1,19 +1,45 @@
 package Driver;
+
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-
-import java.util.concurrent.TimeUnit;
+import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.ie.InternetExplorerDriver;
+import properties.PropertyReader;
+/*
+    Patten Singleton
+ */
 
 public class DriverCreation {
     private static ThreadLocal<WebDriver> driver = new ThreadLocal<>();
 
-    public static WebDriver getDriver() {
+    public static void setDriver(String browserType) {
         if (driver.get() == null) {
-            WebDriver webDriver = new ChromeDriver();
-            webDriver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-            webDriver.manage().window().maximize();
-            driver.set(webDriver);
+            createDriver(browserType);
         }
+    }
+
+    private static void createDriver(String browserType) {
+        switch (browserType) {
+            case "Chrome":
+                WebDriverManager.chromedriver().setup();
+                ChromeOptions chromeOptions = new ChromeOptions();
+                chromeOptions.addArguments(PropertyReader.getProperties().getProperty("chrome.driver.options").split(";"));
+                driver.set(new ChromeDriver(chromeOptions));
+                break;
+            case "Mozilla":
+                WebDriverManager.firefoxdriver().setup();
+                driver.set(new FirefoxDriver());
+                break;
+            case "IE":
+                WebDriverManager.iedriver().setup();
+                driver.set(new InternetExplorerDriver());
+                break;
+        }
+    }
+
+    public static WebDriver getDriver() {
         return driver.get();
     }
 

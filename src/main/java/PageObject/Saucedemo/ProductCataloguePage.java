@@ -25,11 +25,6 @@ public class ProductCataloguePage extends BasePage {
     private By productNames = By.cssSelector(".inventory_item_name");
     private By productPrices = By.cssSelector(".inventory_item_price");
 
-
-    public ProductCataloguePage(WebDriver driver) {
-        super(driver);
-    }
-
     public ProductCataloguePage verifyProductPage() {
         isDisplayed(title, logo, filter);
         return this;

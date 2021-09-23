@@ -2,14 +2,11 @@ package SaucdemoTestLecture_14;
 
 import Driver.BaseTest;
 import PageFactory.LoginPageFact;
-import PageObject.Saucedemo.*;
-import TestNg.Listener;
+import PageObject.Saucedemo.ProductCataloguePage;
 import Patterns.UserLogin;
 import org.testng.annotations.BeforeClass;
-import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
-@Listeners({Listener.class})
 public class saucedemoValueObject extends BaseTest {
         ProductCataloguePage productCataloguePage;
         LoginPageFact loginPageFact;
@@ -17,8 +14,8 @@ public class saucedemoValueObject extends BaseTest {
 
         @BeforeClass
         public void preCondition() {
-            productCataloguePage = new ProductCataloguePage(driver);
-            loginPageFact = new LoginPageFact(driver);
+            productCataloguePage = new ProductCataloguePage();
+            loginPageFact = new LoginPageFact();
             loginPageFact.openPage();
         }
    // Chain Of Invocations

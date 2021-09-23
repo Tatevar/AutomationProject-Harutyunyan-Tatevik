@@ -4,13 +4,10 @@ import Driver.BaseTest;
 import PageObject.Saucedemo.BasketPage;
 import PageObject.Saucedemo.LoginPage;
 import PageObject.Saucedemo.ProductCataloguePage;
-import TestNg.Listener;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
-@Listeners({Listener.class})
 public class InvocationCountAdd extends BaseTest {
     LoginPage loginPage;
     ProductCataloguePage productcataloguePage;
@@ -18,9 +15,9 @@ public class InvocationCountAdd extends BaseTest {
 
     @BeforeClass
     public void pre() {
-        loginPage = new LoginPage(driver);
-        productcataloguePage = new ProductCataloguePage(driver);
-        basketPage = new BasketPage(driver);
+        loginPage = new LoginPage();
+        productcataloguePage = new ProductCataloguePage();
+        basketPage = new BasketPage();
 
     }
 

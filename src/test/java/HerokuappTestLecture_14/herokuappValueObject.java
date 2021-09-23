@@ -10,7 +10,7 @@ import Patterns.UserLogin;
 
 import static PageObject.herokuapp.HomePageLinksEnum.FORMAUTHENTICATION;
 
-@Listeners({Listener.class})
+
 public class herokuappValueObject extends BaseTest {
     HomePageObject homePageObject;
     FormAuthenticationObject formAuthenticationObject;
@@ -18,10 +18,10 @@ public class herokuappValueObject extends BaseTest {
 
     @BeforeClass
     public void precondition() {
-        homePageObject = new HomePageObject(driver);
+        homePageObject = new HomePageObject();
         homePageObject.openPage();
         homePageObject.clickLink(FORMAUTHENTICATION);
-        formAuthenticationObject = new FormAuthenticationObject(driver);
+        formAuthenticationObject = new FormAuthenticationObject();
 
     }
     @Test
@@ -30,8 +30,8 @@ public class herokuappValueObject extends BaseTest {
         formAuthenticationObject
                 .verifyPageTitle("Login Page")
                 .loginToApp(userLogin)
-                .checkErrorText("Your username is invalid!\n" +
-                "×");
+                .checkErrorText("Your password is invalid!\n" +
+                        "×");
     }
 }
 

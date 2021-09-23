@@ -2,7 +2,6 @@ package PageObject.Saucedemo;
 
 import PageObject.BasePage;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 
 public class CheckoutPage extends BasePage {
 
@@ -12,10 +11,6 @@ public class CheckoutPage extends BasePage {
     private By postalCode = By.cssSelector("[data-test=postalCode]");
     private By checkoutInfo = By.id("checkout_info_container");
 
-
-    public CheckoutPage(WebDriver driver) {
-        super(driver);
-    }
     public CheckoutPage verifyCheckoutPage() {
         isDisplayed(checkoutInfo);
         return this;
