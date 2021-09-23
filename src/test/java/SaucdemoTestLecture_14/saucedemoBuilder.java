@@ -4,7 +4,6 @@ import Driver.BaseTest;
 import PageObject.Saucedemo.LoginPage;
 import PageObject.Saucedemo.ProductCataloguePage;
 import Patterns.User;
-import Patterns.User.UserBuilder;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
@@ -22,7 +21,11 @@ public class saucedemoBuilder extends BaseTest {
 
     @Test
     public void loginToAppWithStandard_Test() {
-        User user = new User.UserBuilder().username("problem_user").password("secret_sauce").build();
+        User user =  User
+                .builder()
+                .username("problem_user")
+                .password("secret_sauce")
+                .build();
         loginPage.loginToAppWithBuilder(user);
         productCataloguePage.verifyProductPage();
 

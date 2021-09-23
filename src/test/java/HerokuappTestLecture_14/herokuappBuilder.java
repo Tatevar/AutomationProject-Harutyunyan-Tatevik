@@ -25,10 +25,10 @@ public class herokuappBuilder extends BaseTest {
 
     @Test
     public void formAuthenticationObject_Test() {
-        User user = new User
-                .Builder()
-                .withUsername("hgjh")
-                .withPassword("   ")
+        User user =  User
+                .builder()
+                .username("hgjh")
+                .password("   ")
                 .build();
         formAuthenticationObject
                 .verifyPageTitle("Login Page")

@@ -2,6 +2,7 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 <suite name="Saucedemo Pattern">
     <parameter name="env" value="saucedemo"></parameter>
+    <parameter name="browser" value="Chrome"></parameter>
     <test name="Value object test">
         <classes>
             <class name="SaucdemoTestLecture_14.saucedemoValueObject"></class>
