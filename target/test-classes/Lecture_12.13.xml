@@ -2,6 +2,7 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="the-internet welcomes you">
     <parameter name="env" value="herokuapp"></parameter>
+    <parameter name="browser" value="Chrome"></parameter>
     <test name="Context Menu" enabled="false">
         <classes>
             <class name="Lecture_12_13.ContextMenu_Test"/>

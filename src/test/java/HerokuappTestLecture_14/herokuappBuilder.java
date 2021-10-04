@@ -6,7 +6,7 @@ import TestNg.Listener;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
-import Patterns.UserBuilder;
+import Patterns.User;
 
 import static PageObject.herokuapp.HomePageLinksEnum.FORMAUTHENTICATION;
 
@@ -17,22 +17,22 @@ public class herokuappBuilder extends BaseTest {
 
     @BeforeClass
     public void precondition() {
-        homePageObject = new HomePageObject(driver);
+        homePageObject = new HomePageObject();
         homePageObject.openPage();
         homePageObject.clickLink(FORMAUTHENTICATION);
-        formAuthenticationObject = new FormAuthenticationObject(driver);
+        formAuthenticationObject = new FormAuthenticationObject();
     }
 
     @Test
     public void formAuthenticationObject_Test() {
-        UserBuilder userBuilder = new UserBuilder
-                .Builder()
-                .withUsername("hgjh")
-                .withPassword("   ")
+        User user =  User
+                .builder()
+                .username("hgjh")
+                .password("   ")
                 .build();
         formAuthenticationObject
                 .verifyPageTitle("Login Page")
-                .loginToApplication(userBuilder)
+                .loginToApplication(user)
                 .checkErrorText("Your username is invalid!\n" +
                         "×");
         }

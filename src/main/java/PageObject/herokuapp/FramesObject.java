@@ -19,10 +19,6 @@ public class FramesObject extends BasePage {
         return this;
     }
 
-    public FramesObject(WebDriver driver) {
-        super(driver);
-    }
-
     public FramesObject clickFrameLink(String frameLink) {
         click(getFrameLink(frameLink));
         return this;

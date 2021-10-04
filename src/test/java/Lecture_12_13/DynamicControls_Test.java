@@ -9,8 +9,6 @@ import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 import static PageObject.herokuapp.HomePageLinksEnum.DYNAMIC_CONTROLS;
 
-
-@Listeners({Listener.class})
 public class DynamicControls_Test extends BaseTest {
     DynamicControlsObject dynamicControlsObject;
     HomePageObject homePageObject;
@@ -18,8 +16,8 @@ public class DynamicControls_Test extends BaseTest {
 
     @BeforeClass
     public void precondition() {
-        dynamicControlsObject = new DynamicControlsObject(driver);
-        homePageObject = new HomePageObject(driver);
+        dynamicControlsObject = new DynamicControlsObject();
+        homePageObject = new HomePageObject();
         homePageObject.openPage();
         homePageObject.clickLink(DYNAMIC_CONTROLS);
     }

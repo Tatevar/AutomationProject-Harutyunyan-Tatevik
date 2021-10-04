@@ -1,9 +1,8 @@
 package PageObject.herokuapp;
 import PageObject.BasePage;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
-import Patterns.UserBuilder;
+import Patterns.User;
 import Patterns.UserLogin;
 
 public class FormAuthenticationObject extends BasePage {
@@ -13,15 +12,12 @@ public class FormAuthenticationObject extends BasePage {
     private By logintBtn = By.xpath("//button[@type='submit']");
     private By errorTxt = By.id("flash-messages");
 
-    public FormAuthenticationObject(WebDriver driver) {
-        super(driver);
-    }
     public FormAuthenticationObject verifyPageTitle(String title) {
         Assert.assertEquals(getElementText(this.title), title);
         return this;
     }
 
-    public FormAuthenticationObject loginToApplication(UserBuilder user) {
+    public FormAuthenticationObject loginToApplication(User user) {
         enter(this.username, user.username);
         enter(this.password, user.password);
         click(this.logintBtn);

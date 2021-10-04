@@ -6,7 +6,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 
-import java.nio.channels.Selector;
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
@@ -25,11 +24,6 @@ public class ProductCataloguePage extends BasePage {
     private By selectOption = By.cssSelector(".product_sort_container");
     private By productNames = By.cssSelector(".inventory_item_name");
     private By productPrices = By.cssSelector(".inventory_item_price");
-
-
-    public ProductCataloguePage(WebDriver driver) {
-        super(driver);
-    }
 
     public ProductCataloguePage verifyProductPage() {
         isDisplayed(title, logo, filter);

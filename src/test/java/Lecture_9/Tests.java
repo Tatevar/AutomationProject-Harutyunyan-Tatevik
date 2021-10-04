@@ -3,14 +3,14 @@ package Lecture_9;
 import Driver.BaseTest;
 import PageFactory.BasketPageFact;
 import PageFactory.LoginPageFact;
-import PageObject.Saucedemo.*;
-import TestNg.Listener;
+import PageObject.Saucedemo.CheckoutPage;
+import PageObject.Saucedemo.OrderCheckingPage;
+import PageObject.Saucedemo.OrderCompletedPage;
+import PageObject.Saucedemo.ProductCataloguePage;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
-@Listeners({Listener.class})
 public class Tests extends BaseTest {
     ProductCataloguePage productCataloguePage;
     BasketPageFact basketPageFact;
@@ -21,12 +21,12 @@ public class Tests extends BaseTest {
 
     @BeforeClass
     public void initialization() {
-        productCataloguePage = new ProductCataloguePage(driver);
-        basketPageFact = new BasketPageFact(driver);
-        checkoutPage = new CheckoutPage(driver);
-        orderCheckingPage = new OrderCheckingPage(driver);
-        orderCompletedPage = new OrderCompletedPage(driver);
-        loginPageFact = new LoginPageFact(driver);
+        productCataloguePage = new ProductCataloguePage();
+        basketPageFact = new BasketPageFact();
+        checkoutPage = new CheckoutPage();
+        orderCheckingPage = new OrderCheckingPage();
+        orderCompletedPage = new OrderCompletedPage();
+        loginPageFact = new LoginPageFact();
     }
     @BeforeMethod
     public void precondition() {

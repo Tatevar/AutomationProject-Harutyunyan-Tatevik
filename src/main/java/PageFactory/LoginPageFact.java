@@ -2,7 +2,6 @@ package PageFactory;
 
 import PageObject.BasePage;
 import Patterns.UserLogin;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -22,8 +21,7 @@ public class LoginPageFact extends BasePage {
     @FindBy(css = "[data-test=login-button]")
     WebElement loginBtn;
 
-    public LoginPageFact(WebDriver driver) {
-        super(driver);
+    public LoginPageFact() {
         PageFactory.initElements(driver, this);
     }
 

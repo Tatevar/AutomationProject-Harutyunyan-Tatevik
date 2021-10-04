@@ -14,11 +14,6 @@ public class DynamicControlsObject extends BasePage {
     private By input = By.cssSelector("#input-example>input");
     private By enableBtn = By.cssSelector(" #input-example>button");
 
-
-    public DynamicControlsObject(WebDriver driver) {
-        super(driver);
-    }
-
     public DynamicControlsObject verifyPageTitle() {
         Assert.assertEquals(getElementText(title), DYNAMIC_CONTROLS.getLinkText());
         return this;

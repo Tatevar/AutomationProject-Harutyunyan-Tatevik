@@ -12,10 +12,6 @@ public class FileUploaderObject extends BasePage {
     private By uploadedFiles = By.id("uploaded-files");
     private String userDir = System.getProperty("user.dir");
 
-    public FileUploaderObject(WebDriver driver) {
-        super(driver);
-    }
-
     public FileUploaderObject verifyPageTitle(String title) {
         Assert.assertEquals(getElementText(this.title), title);
         return this;

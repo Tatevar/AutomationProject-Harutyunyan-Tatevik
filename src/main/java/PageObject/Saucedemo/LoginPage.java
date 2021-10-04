@@ -1,9 +1,8 @@
 package PageObject.Saucedemo;
 
-import Patterns.UserBuilder;
+import Patterns.User;
 import PageObject.BasePage;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 
 public class LoginPage extends BasePage {
@@ -12,9 +11,6 @@ public class LoginPage extends BasePage {
     private By loginBtn = By.cssSelector("[data-test=login-button]");
     private By errorTxt = By.cssSelector("[data-test=error]");
 
-    public LoginPage(WebDriver driver) {
-        super(driver);
-    }
     public LoginPage openPage() {
         open();
         return this;
@@ -37,7 +33,7 @@ public class LoginPage extends BasePage {
         return this;
     }
     //Builder
-    public LoginPage loginToAppWithBuilder(UserBuilder user) {
+    public LoginPage loginToAppWithBuilder(User user) {
         enter(this.username, user.username);
         enter(this.password, user.password);
         click(this.loginBtn);

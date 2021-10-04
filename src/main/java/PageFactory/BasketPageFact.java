@@ -1,8 +1,6 @@
 package PageFactory;
 
 import PageObject.BasePage;
-import PageObject.Saucedemo.BasketPage;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -21,8 +19,7 @@ public class BasketPageFact extends BasePage {
     @FindBy(id="removed_cart_item")
     WebElement removedCartItem;
 
-    public BasketPageFact(WebDriver driver) {
-        super(driver);
+    public BasketPageFact() {
         PageFactory.initElements(driver, this);
     }
     public BasketPageFact verifyBasketPage() {
