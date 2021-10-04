@@ -1,6 +1,7 @@
 package Lecture_17;
 
 import Lecture_17.User.Root;
+import Lecture_17.User.RootArray;
 import io.restassured.response.Response;
 import org.apache.http.HttpStatus;
 import org.testng.Assert;
@@ -67,7 +68,7 @@ public class Lecture_17 {
     public void resourceList() {
         String endpoint = "/api/unknown";
         given().get(endpoint).then().statusCode(HttpStatus.SC_OK).extract().response().getBody().prettyPrint();
-        Root root = given().when().get(endpoint).as(Root.class);
+        RootArray root = given().when().get(endpoint).as(RootArray.class);
         Assert.assertEquals(root.support.url, "https://reqres.in/#support-heading");
     }
 
@@ -185,7 +186,7 @@ public class Lecture_17 {
         } catch (InterruptedException ie) {
             Thread.currentThread().interrupt();
         }
-        Root root = given().when().get(endpoint).as(Root.class);
+        RootArray root = given().when().get(endpoint).as(RootArray.class);
         Assert.assertEquals(root.support.text,"To keep ReqRes free, contributions towards server costs are appreciated!");
 
     }
