@@ -5,7 +5,8 @@ public enum HomePageLinksEnum {
     DYNAMIC_CONTROLS("Dynamic Controls"),
     FILE_UPLOADER("File Upload"),
     FRAMES("Frames"),
-   FILEDOWNLOAD("File Download");
+    FILEDOWNLOAD("File Download"),
+    FORMAUTHENTICATION("Form Authentication");
 
     String link;
 

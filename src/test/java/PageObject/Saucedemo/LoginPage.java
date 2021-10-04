@@ -1,5 +1,6 @@
 package PageObject.Saucedemo;
 
+import Patterns.UserBuilder;
 import PageObject.BasePage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -33,6 +34,13 @@ public class LoginPage extends BasePage {
 
     public LoginPage checkErrorText(String expectedText) {
         Assert.assertEquals(getElementText(errorTxt), expectedText);
+        return this;
+    }
+    //Builder
+    public LoginPage loginToAppWithBuilder(UserBuilder user) {
+        enter(this.username, user.username);
+        enter(this.password, user.password);
+        click(this.loginBtn);
         return this;
     }
 }
