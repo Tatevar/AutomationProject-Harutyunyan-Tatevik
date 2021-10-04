@@ -63,7 +63,7 @@ public class Lecture_17 {
                 "}");
 
     }
-//не работает 
+
     @Test
     public void resourceList() {
         String endpoint = "/api/unknown";
@@ -176,7 +176,7 @@ public class Lecture_17 {
         Assert.assertEquals(response.jsonPath().get("error"), "Missing password");
 
     }
-    //nоже не работает
+ 
     @Test
     public void delay() {
         String endpoint = "/api/users?delay=3";
