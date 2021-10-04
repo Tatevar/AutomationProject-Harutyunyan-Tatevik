@@ -17,10 +17,10 @@ public class BasePage {
     protected Actions actions;
     protected Properties properties;
 
-    protected BasePage() {
+    protected BasePage(WebDriver driver) {
         this.driver = DriverCreation.getDriver();
-        wait = new WebDriverWait(driver, 5);
-        actions = new Actions(driver);
+        wait = new WebDriverWait(DriverCreation.getDriver(), 5);
+        actions = new Actions(DriverCreation.getDriver());
         properties = PropertyReader.getProperties();
     }
 
