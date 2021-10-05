@@ -9,8 +9,6 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
-
-@Listeners({Listener.class})
 public class InvocationCountRemove extends BaseTest {
     LoginPage loginPage;
     ProductCataloguePage productcataloguePage;
@@ -18,9 +16,9 @@ public class InvocationCountRemove extends BaseTest {
 
     @BeforeClass
     public void pre() {
-        loginPage = new LoginPage(driver);
-        productcataloguePage = new ProductCataloguePage(driver);
-        basketPage = new BasketPage(driver);
+        loginPage = new LoginPage();
+        productcataloguePage = new ProductCataloguePage();
+        basketPage = new BasketPage();
 
     }
     @BeforeMethod

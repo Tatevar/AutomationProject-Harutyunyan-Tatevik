@@ -7,7 +7,7 @@ import TestNg.Listener;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.*;
 
-@Listeners(Listener.class)
+
 public class DataProvaiderTests extends BaseTest {
     String emptyField = "";
     String username = "standard_user";
@@ -33,8 +33,8 @@ public class DataProvaiderTests extends BaseTest {
     @Test(dataProvider = "Authorization")
     public void SignIn_Tests(String username, String password, String errorText) {
         WebDriver driver = DriverCreation.getDriver();
-        LoginPage loginPage = new LoginPage(driver);
-        ProductCataloguePage productCataloguePage = new ProductCataloguePage(driver);
+        LoginPage loginPage = new LoginPage();
+        ProductCataloguePage productCataloguePage = new ProductCataloguePage();
         loginPage
                 .openPage()
                 .verifyLoginPage()

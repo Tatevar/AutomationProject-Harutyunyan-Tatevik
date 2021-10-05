@@ -1,26 +1,22 @@
 package Lecture_10;
 
 import Driver.BaseTest;
-import PageObject.Saucedemo.*;
-import TestNg.Listener;
+import PageObject.Saucedemo.LoginPage;
+import PageObject.Saucedemo.ProductCataloguePage;
+import io.qameta.allure.*;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 import static PageObject.Saucedemo.ProductPageFilter.*;
-import io.qameta.allure.*;
 
-
-
-@Listeners({Listener.class})
 public class SortingTests extends BaseTest {
     LoginPage loginPage;
     ProductCataloguePage productCataloguePage;
 
     @BeforeClass
     public void initialization() {
-        loginPage = new LoginPage(driver);
-        productCataloguePage = new ProductCataloguePage(driver);
+        loginPage = new LoginPage();
+        productCataloguePage = new ProductCataloguePage();
     }
 
     @BeforeMethod
