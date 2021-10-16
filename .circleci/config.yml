@@ -43,6 +43,6 @@ workflows:
           filters:
             branches:
               only:
-                -Lecture_21
+                -All
     jobs:
       - ui-tests
