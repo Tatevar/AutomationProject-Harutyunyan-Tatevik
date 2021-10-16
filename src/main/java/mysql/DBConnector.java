@@ -1,16 +1,20 @@
 package mysql;
 
+import properties.PropertyReader;
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.Statement;
 
-import static java.sql.DriverManager.getConnection;
-
 public class DBConnector {
+    private static Connection connection;
 
     public Connection getConnection() {
         try {
-            return DriverManager.getConnection("jdbc:mysql://db4free.net/testqa07?user=testqa07&password=testqa07");
+            if (connection == null) {
+                connection = DriverManager.getConnection(PropertyReader.getProperties().getProperty("db"));
+            }
+            return connection;
         } catch (Exception e) {
             e.printStackTrace();
         }
