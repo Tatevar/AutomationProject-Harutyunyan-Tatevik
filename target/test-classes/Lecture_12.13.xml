@@ -3,17 +3,17 @@
 <suite name="the-internet welcomes you">
     <parameter name="env" value="herokuapp"></parameter>
     <parameter name="browser" value="Chrome"></parameter>
-    <test name="Context Menu" enabled="false">
+    <test name="Context Menu" >
         <classes>
             <class name="Lecture_12_13.ContextMenu_Test"/>
         </classes>
     </test>
-    <test name="Dynamic Controls" enabled="false">
+    <test name="Dynamic Controls">
         <classes>
             <class name="Lecture_12_13.DynamicControls_Test"/>
         </classes>
     </test>
-    <test name="File Uploader" enabled="false">
+    <test name="File Uploader" >
         <classes>
             <class name="Lecture_12_13.FileUploader_Test"/>
         </classes>
