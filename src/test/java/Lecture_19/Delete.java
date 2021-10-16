@@ -6,6 +6,6 @@ public class Delete {
 
     @Test
     public void test1() {
-        delete().from("user").condition("id=1").execute();
+        delete().table("user").condition("id=1").execute();
     }
 }

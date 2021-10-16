@@ -43,7 +43,7 @@ public class DeleteHelper extends DBConnector {
 
     public void execute() {
         try {
-            getStatement().executeUpdate("DELETE " + " from " + from + " WHERE "  + "CONDITION" + "( " + condition + ")");
+            getStatement().executeUpdate("DELETE " + table  + " CONDITION " + "( " + condition + ")");
         } catch (Exception e) {
             e.printStackTrace();
         }
