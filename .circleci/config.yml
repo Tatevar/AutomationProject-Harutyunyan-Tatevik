@@ -44,5 +44,6 @@ workflows:
             branches:
               only:
                 -All
+
     jobs:
       - ui-tests
