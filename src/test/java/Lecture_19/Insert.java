@@ -13,6 +13,6 @@ public class Insert {
 
     @Test
     public void insertTest2() {
-        getInsert().table("user").into( "id").values("7").execute();
+        getInsert().table("user").into("id,first_name,last_name,age").values("'5555','Barev','Karmir Arev','555'").execute();
     }
 }

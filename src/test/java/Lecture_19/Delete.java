@@ -5,7 +5,11 @@ import static mysql.DeleteHelper.delete;
 public class Delete {
 
     @Test
-    public void test1() {
-        delete().table("user").condition("id=1").execute();
+    public void delete_test1() {
+        delete().from("user").where("id=16").execute();
+    }
+    @Test
+    public void delete_test2() {
+        delete().from("user").where("id=2").where("age='test'").execute();
     }
 }
