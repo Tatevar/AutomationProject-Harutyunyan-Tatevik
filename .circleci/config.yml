@@ -44,4 +44,5 @@ workflows:
             branches:
               only:
                 - Lecture_21
+    jobs:
       - ui-tests
