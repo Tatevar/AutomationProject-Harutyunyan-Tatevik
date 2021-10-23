@@ -10,6 +10,7 @@ public class MoodPanda_Test extends BaseTestSelenide {
 
     @Test
     public void verifyHomePage_Test() {
+        String id =System.getProperty("TestMvn");
         get(HomePage.class)
                 .checkBrandNameSubtext()
                 .checkImage();
