@@ -1,0 +1,60 @@
+[
+  {
+    "line": 1,
+    "elements": [
+      {
+        "start_timestamp": "2021-10-23T22:58:48.732Z",
+        "line": 2,
+        "name": "Hotel searching and finding on the booking page",
+        "description": "",
+        "id": "find-a-hotel;hotel-searching-and-finding-on-the-booking-page",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 16928387500,
+              "status": "passed"
+            },
+            "line": 3,
+            "name": "The booking page is loaded",
+            "match": {
+              "location": "BookingHomePage_Steps.openPage()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 15224772600,
+              "status": "passed"
+            },
+            "line": 4,
+            "name": "Enter Hotel Name And Click the Search Button",
+            "match": {
+              "location": "BookingHomePage_Steps.searchTheHotel()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 4035443000,
+              "status": "passed"
+            },
+            "line": 5,
+            "name": "The Hotel is displayed with the Rating Exceptional",
+            "match": {
+              "location": "BookingHomePage_Steps.hotelResults()"
+            },
+            "keyword": "Then "
+          }
+        ]
+      }
+    ],
+    "name": "Find a hotel",
+    "description": "",
+    "id": "find-a-hotel",
+    "keyword": "Feature",
+    "uri": "file:src/test/resources/feature/tests.feature",
+    "tags": []
+  }
+]

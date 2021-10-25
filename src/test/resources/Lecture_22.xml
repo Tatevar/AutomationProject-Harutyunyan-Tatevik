@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="BOOKING" parallel="tests">
+    <parameter name="env" value="booking"/>
+
+    <listeners>
+        <listener class-name="TestNg.Listener"/>
+    </listeners>
+
+    <test name="Booking test">
+        <classes>
+            <class name="Lecture_22.Lecture_22"/>
+        </classes>
+    </test>
+
+</suite>
