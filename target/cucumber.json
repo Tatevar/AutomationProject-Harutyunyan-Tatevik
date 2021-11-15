@@ -3,7 +3,7 @@
     "line": 1,
     "elements": [
       {
-        "start_timestamp": "2021-10-23T22:58:48.732Z",
+        "start_timestamp": "2021-11-15T11:41:09.085Z",
         "line": 2,
         "name": "Hotel searching and finding on the booking page",
         "description": "",
@@ -13,7 +13,7 @@
         "steps": [
           {
             "result": {
-              "duration": 16928387500,
+              "duration": 6496534900,
               "status": "passed"
             },
             "line": 3,
@@ -25,7 +25,7 @@
           },
           {
             "result": {
-              "duration": 15224772600,
+              "duration": 3804722300,
               "status": "passed"
             },
             "line": 4,
@@ -37,7 +37,7 @@
           },
           {
             "result": {
-              "duration": 4035443000,
+              "duration": 812067600,
               "status": "passed"
             },
             "line": 5,
